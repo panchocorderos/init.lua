@@ -12,11 +12,29 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+      'lewis6991/gitsigns.nvim',
+      -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
+  use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
+
+  use 'nvim-tree/nvim-web-devicons'
+  use {'romgrk/barbar.nvim'}
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('tpope/vim-rails')
+  use('ryanoasis/vim-devicons')
+  use('terrortylor/nvim-comment') -- Comments
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   use{
       'ayu-theme/ayu-vim',
       config = function()
